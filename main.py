@@ -6,8 +6,7 @@ import time
 import os
 
 api_id = int(os.getenv("20139205"))
-api_hash = os.getenv("fab8db9897ed148dbb4da62e77621ff4
-")
+api_hash = os.getenv("fab8db9897ed148dbb4da62e77621ff4")
 session_name = "my_account"
 
 groups = os.getenv("GROUPS").split("@ark_side_affiliate_offers,@affiliate_marketing_hub,@delta_fx_crypto_board")
