@@ -1,17 +1,16 @@
+from telethon import TelegramClient
 import asyncio
-import schedule
-from pyrogram import Client
-import time
-import os
 
-# Get environment variables with defaults if they are not set
-api_id = int(os.getenv("API_ID", "20139205"))  # Default value if not set
-api_hash = os.getenv("API_HASH", "fab8db9897ed148dbb4da62e77621ff4")  # Default value if not set
-session_name = "my_account"
+# Дані з my.telegram.org
+api_id = '20139205'  # Заміни на свій API ID
+api_hash = 'fab8db9897ed148dbb4da62e77621ff4'  # Заміни на свій API Hash
+phone_number = '+380634398931'  # Заміни на свій номер телефону
 
-# Split groups properly by comma
-groups = os.getenv("GROUPS", "@dark_side_affiliate_offers,@affiliate_marketing_hub,@delta_fx_crypto_board").split(",")  # Expecting comma-separated group names
-message_text = os.getenv("MESSAGE_TEXT", """🎯  PREMIUM LIVE LEADS
+# Список груп (можна використовувати username або ID)
+groups = ['@Crypto_Affiliate_eng', '@fortraffic']  # Заміни на свої групи
+
+# Повідомлення для розсилки
+message = "🎯  PREMIUM LIVE LEADS 
 
 🚀 Get high-quality, real-time leads that bring results! I work with a wide range of geos and offer flexible deals to fit your needs. Whether you want high-intent traffic or exclusive leads, I can help you scale!
 
@@ -39,41 +38,30 @@ message_text = os.getenv("MESSAGE_TEXT", """🎯  PREMIUM LIVE LEADS
 🇨🇦 Canada
 🇦🇺 Australia
 
-💬 DM me now and let’s talk business! 💰📩""")
+💬 DM me now and let’s talk business! 💰📩"
 
+# Функція для розсилки повідомлень
 async def send_messages():
-    async with Client(session_name, api_id, api_hash) as app:
-        for group in groups:
-            try:
-                await app.send_message(group.strip(), message_text)  # Strip to remove leading/trailing spaces
-                print(f"✅ Message sent to {group}")
-            except Exception as e:
-                print(f"❌ Error sending message to {group}: {e}")
+    # Підключення до твого акаунта
+    client = TelegramClient('session_name', api_id, api_hash)
+    await client.start(phone=phone_number)
 
-def job():
-    asyncio.run(send_messages())
+    # Розсилка повідомлень у групи
+    for group in groups:
+        try:
+            await client.send_message(group, message)
+            print(f"Повідомлення відправлено у групу: {group}")
+        except Exception as e:
+            print(f"Помилка при відправці в групу {group}: {e}")
 
-# Schedule the job to run every hour
-schedule.every(1).hours.do(job)
+    await client.disconnect()
 
-print("Text me")
+# Запуск розсилки раз на годину
+async def main():
+    while True:
+        await send_messages()
+        await asyncio.sleep(3600)  # Затримка на 1 годину (3600 секунд)
 
-# Keep the scheduler running
-while True:
-    schedule.run_pending()
-    time.sleep(61)  # Sleep 61 seconds to avoid overloading the scheduler
-
-
-
-
-
-async def send_messages():
-    async with Client(session_name, api_id, api_hash) as app:
-        print("🔄 Бот авторизований і починає розсилку...")
-        for group in groups:
-            try:
-                print(f"📤 Відправляю в {group}...")
-                await app.send_message(group, message_text)
-                print(f"✅ Повідомлення успішно відправлено в {group}")
-            except Exception as e:
-                print(f"❌ Помилка відправки в {group}: {e}")
+# Запуск програми
+if __name__ == '__main__':
+    asyncio.run(main())
