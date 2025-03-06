@@ -58,4 +58,4 @@ schedule.every(1).hours.do(job)
 print("TEXT ME")
 while True:
     schedule.run_pending()
-    time.sleep(60)
+    time.sleep(61)
