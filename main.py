@@ -62,3 +62,18 @@ print("Text me")
 while True:
     schedule.run_pending()
     time.sleep(61)  # Sleep 61 seconds to avoid overloading the scheduler
+
+
+
+
+
+async def send_messages():
+    async with Client(session_name, api_id, api_hash) as app:
+        print("🔄 Бот авторизований і починає розсилку...")
+        for group in groups:
+            try:
+                print(f"📤 Відправляю в {group}...")
+                await app.send_message(group, message_text)
+                print(f"✅ Повідомлення успішно відправлено в {group}")
+            except Exception as e:
+                print(f"❌ Помилка відправки в {group}: {e}")
