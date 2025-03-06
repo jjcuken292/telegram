@@ -9,7 +9,7 @@ API_HASH = os.environ['API_HASH']
 PHONE_NUMBER = os.environ['PHONE_NUMBER']
 
 # Список груп
-GROUPS = ['@Crypto_Affiliate_eng', '@fortraffic']
+GROUPS = ['@Crypto_Affiliate_eng', '@fortraffic', '@LeadsAreUs', '@affmktcity', '@affiliate_marketing_hub', '@blackhat_forever', '@wiseaffiliate', '@delta_fx_crypto_board', '@trafficforyou', '@enalltrafficgroupchat', '@looking_for_offers', '@dark_side_affiliate_offers', '@affhub_collab', '@affcommunity']
 
 # Текст повідомлення
 MESSAGE = """🎯  PREMIUM LIVE LEADS 
@@ -73,7 +73,7 @@ async def main():
     while True:
         await send_messages()
         print("⏳ Наступна розсилка через 1 годину...")
-        await asyncio.sleep(3600)
+        await asyncio.sleep(3602)
 
 if __name__ == '__main__':
     print("🚀 Запуск розсильника...")
