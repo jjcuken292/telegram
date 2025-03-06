@@ -10,7 +10,7 @@ api_hash = os.getenv("fab8db9897ed148dbb4da62e77621ff4
 ")
 session_name = "my_account"
 
-groups = os.getenv("GROUPS").split("@ark_side_affiliate_offers, @affiliate_marketing_hub, @delta_fx_crypto_board")
+groups = os.getenv("GROUPS").split("@ark_side_affiliate_offers,@affiliate_marketing_hub,@delta_fx_crypto_board")
 message_text = os.getenv("MESSAGE_TEXT", "🎯  PREMIUM LIVE LEADS 
 
 🚀 Get high-quality, real-time leads that bring results! I work with a wide range of geos and offer flexible deals to fit your needs. Whether you want high-intent traffic or exclusive leads, I can help you scale!
