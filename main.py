@@ -9,7 +9,7 @@ API_HASH = os.environ['API_HASH']
 PHONE_NUMBER = os.environ['PHONE_NUMBER']
 
 # Список груп
-GROUPS = ['@Crypto_Affiliate_eng', '@fortraffic', '@LeadsAreUs', '@affmktcity', '@affiliate_marketing_hub', '@blackhat_forever', '@wiseaffiliate', '@delta_fx_crypto_board', '@trafficforyou', '@enalltrafficgroupchat', '@looking_for_offers', '@dark_side_affiliate_offers', '@affhub_collab', '@affcommunity']
+GROUPS = ['@Crypto_Affiliate_eng', '@fortraffic', '@LeadsAreUs', '@affmktcity', '@affiliate_marketing_hub', '@blackhat_forever', '@wiseaffiliate', '@delta_fx_crypto_board', '@trafficforyou', '@enalltrafficgroupchat', '@looking_for_offers', '@dark_side_affiliate_offers', '@affhub_collab', '@affcommunity' '@forex_and_crypto_leads_board', '@AffiliateChat', '@thegodsforexcrypto', '@affiliatecryptoconference', '@affiliatebro', '@affiliatecryptoconference', '@trafficforeveryone', '@TrafficPlaceMarket', '@GodsOfFx', ]
 
 # Текст повідомлення
 MESSAGE = """🎯  PREMIUM LIVE LEADS 
@@ -18,6 +18,8 @@ MESSAGE = """🎯  PREMIUM LIVE LEADS
 
 🌍 Top geos available:
 
+🇨🇦 Canada
+🇦🇺 Australia
 🇩🇪 Germany
 🇫🇷 France
 🇮🇹 Italy
@@ -36,9 +38,6 @@ MESSAGE = """🎯  PREMIUM LIVE LEADS
 🇵🇹 Portugal
 🇮🇪 Ireland
 🇬🇷 Greece
-🇸🇰 Slovakia
-🇨🇦 Canada
-🇦🇺 Australia
 
 💬 DM me now and let’s talk business! 💰📩"""  # Ваш текст
 
