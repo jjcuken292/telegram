@@ -12,32 +12,17 @@ PHONE_NUMBER = os.environ['PHONE_NUMBER']
 GROUPS = ['@Crypto_Affiliate_eng', '@fortraffic', '@LeadsAreUs', '@affmktcity', '@affiliate_marketing_hub', '@blackhat_forever', '@wiseaffiliate', '@delta_fx_crypto_board', '@trafficforyou', '@enalltrafficgroupchat', '@looking_for_offers', '@dark_side_affiliate_offers', '@affhub_collab', '@affcommunity', '@forex_and_crypto_leads_board', '@AffiliateChat', '@thegodsforexcrypto', '@affiliatecryptoconference', '@affiliatebro', '@affiliatecryptoconference', '@trafficforeveryone', '@TrafficPlaceMarket', '@GodsOfFx', ]
 
 # Текст повідомлення
-MESSAGE = """🎯  PREMIUM LIVE LEADS 
+MESSAGE = """🎯 PREMIUM LIVE LEADS
+🚀 Get high-quality, real-time leads that bring results!
 
-🚀 Get high-quality, real-time leads that bring results! I work with a wide range of geos and offer flexible deals to fit your needs. Whether you want high-intent traffic or exclusive leads, I can help you scale!
+I work with a wide range of geos and offer flexible deals to fit your needs. Whether you want high-intent traffic or exclusive leads, I can help you scale!
 
 🌍 Top geos available:
 
-🇨🇦 Canada
-🇦🇺 Australia
-🇩🇪 Germany
-🇫🇷 France
-🇮🇹 Italy
-🇪🇸 Spain
-🇳🇱 Netherlands
-🇸🇪 Sweden
-🇳🇴 Norway
-🇩🇰 Denmark
-🇨🇭 Switzerland
-🇬🇧 United Kingdom
-🇧🇪 Belgium
-🇦🇹 Austria
-🇫🇮 Finland
-🇵🇱 Poland
-🇨🇿 Czech Republic
-🇵🇹 Portugal
-🇮🇪 Ireland
-🇬🇷 Greece
+🇩🇪 Germany | 🇫🇷 France | 🇮🇹 Italy | 🇪🇸 Spain | 🇳🇱 Netherlands
+🇸🇪 Sweden | 🇳🇴 Norway | 🇩🇰 Denmark | 🇨🇭 Switzerland | 🇬🇧 United Kingdom
+🇧🇪 Belgium | 🇦🇹 Austria | 🇫🇮 Finland | 🇵🇱 Poland | 🇨🇿 Czech Republic
+🇵🇹 Portugal | 🇮🇪 Ireland | 🇬🇷 Greece | 🇸🇰 Slovakia | 🇨🇦 Canada | 🇦🇺 Australia
 
 💬 DM me now and let’s talk business! 💰📩"""  # Ваш текст
 
