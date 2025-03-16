@@ -24,7 +24,7 @@ I work with a wide range of geos and offer flexible deals to fit your needs. Whe
 🇧🇪 Belgium | 🇦🇹 Austria | 🇫🇮 Finland | 🇵🇱 Poland | 🇨🇿 Czech Republic
 🇵🇹 Portugal | 🇮🇪 Ireland | 🇬🇷 Greece | 🇸🇰 Slovakia | 🇨🇦 Canada | 🇦🇺 Australia
 
-💬 DM me now and let’s talk business! 💰📩"""  # Ваш текст
+💬 DM me now and let’s talk business! 📩"""  # Ваш текст
 
 async def send_messages():
     client = TelegramClient('session_name', API_ID, API_HASH)
