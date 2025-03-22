@@ -1,65 +1,62 @@
 from telethon import TelegramClient, errors
 import asyncio
 import os
-from dotenv import load_dotenv
+import time
 
-# Завантаження змінних середовища
-load_dotenv()
-
-API_ID = int(os.getenv('API_ID'))
-API_HASH = os.getenv('API_HASH')
-PHONE_NUMBER = os.getenv('PHONE_NUMBER')
+# Налаштування змінних середовища
+API_ID = int(os.environ['API_ID'])
+API_HASH = os.environ['API_HASH']
+PHONE_NUMBER = os.environ['PHONE_NUMBER']
 
 # Список груп
-GROUPS = [
-    '@Crypto_Affiliate_eng', '@fortraffic', '@LeadsAreUs', '@affmktcity',
-    '@affiliate_marketing_hub', '@blackhat_forever', '@wiseaffiliate',
-    '@delta_fx_crypto_board', '@trafficforyou', '@enalltrafficgroupchat',
-    '@looking_for_offers', '@dark_side_affiliate_offers', '@affhub_collab',
-    '@affcommunity', '@forex_and_crypto_leads_board', '@AffiliateChat',
-    '@thegodsforexcrypto', '@affiliatecryptoconference', '@affiliatebro',
-    '@trafficforeveryone', '@TrafficPlaceMarket', '@GodsOfFx',
-]
+GROUPS = ['@Crypto_Affiliate_eng', '@fortraffic', '@LeadsAreUs', '@affmktcity', '@affiliate_marketing_hub', '@blackhat_forever', '@wiseaffiliate', '@delta_fx_crypto_board', '@trafficforyou', '@enalltrafficgroupchat', '@looking_for_offers', '@dark_side_affiliate_offers', '@affcommunity', '@forex_and_crypto_leads_board', '@AffiliateChat', '@thegodsforexcrypto', '@affiliatecryptoconference', '@affiliatebro', '@affiliatecryptoconference', '@trafficforeveryone', '@TrafficPlaceMarket', '@GodsOfFx', ]
 
 # Текст повідомлення
-MESSAGE = """🎯 PREMIUM LIVE LEADS
-🚀 Get high-quality, real-time leads that bring results!
+MESSAGE = """🚀 WHO NEEDS HIGH-QUALITY LIVE LEADS? 🚀
+💰 Looking for fresh, real-time leads that actually convert? I’ve got top-tier traffic across multiple geos and flexible deals to match your needs. Whether you're after exclusive leads or high-intent traffic, I’ve got you covered! 💯
 
-I work with a wide range of geos and offer flexible deals to fit your needs. Whether you want high-intent traffic or exclusive leads, I can help you scale!
+📌 Top countries I work with:
 
-🌍 Top geos available:
 
-🇩🇪 Germany | 🇫🇷 France | 🇮🇹 Italy | 🇪🇸 Spain | 🇳🇱 Netherlands
-🇸🇪 Sweden | 🇳🇴 Norway | 🇩🇰 Denmark | 🇨🇭 Switzerland | 🇬🇧 United Kingdom
-🇧🇪 Belgium | 🇦🇹 Austria | 🇫🇮 Finland | 🇵🇱 Poland | 🇨🇿 Czech Republic
-🇵🇹 Portugal | 🇮🇪 Ireland | 🇬🇷 Greece | 🇸🇰 Slovakia | 🇨🇦 Canada | 🇦🇺 Australia
+🇳🇱 Netherlands
+🇩🇪 Germany
+🇨🇭 Switzerland
+🇬🇧 United Kingdom
+🇫🇷 France
+🇮🇹 Italy
+🇪🇸 Spain
+🇸🇪 Sweden
+🇳🇴 Norway
+🇩🇰 Denmark
+🇧🇪 Belgium
+🇦🇹 Austria
+🇫🇮 Finland
+🇵🇱 Poland
+🇨🇦 Canada
+🇦🇺 Australia
+and many more
 
-💬 DM me now and let’s talk business! 📩"""
+🔥 Let’s get started—DM me now for details! 📩💸"""  # Ваш текст
 
 async def send_messages():
     client = TelegramClient('session_name', API_ID, API_HASH)
     try:
+        # Авторизація через файл сесії
         await client.connect()
         
         if not await client.is_user_authorized():
-            print("❌ Файл сесії не працює. Авторизація через номер телефону...")
-            await client.send_code_request(PHONE_NUMBER)
-            code = input("Введіть код, який прийшов на Telegram: ")
-            await client.sign_in(PHONE_NUMBER, code)
-            print("✅ Авторизація успішна!")
+            print("❌ Помилка: файл сесії не працює")
+            return
 
         # Розсилка повідомлень
         for group in GROUPS:
             try:
                 await client.send_message(group, MESSAGE)
                 print(f"✅ Відправлено в {group}")
-                await asyncio.sleep(30)  # Збільшений інтервал
+                await asyncio.sleep(10)
             except errors.FloodWaitError as e:
                 print(f"⏳ Зачекайте {e.seconds} секунд...")
                 await asyncio.sleep(e.seconds)
-                continue
-            except errors.PeerIdInvalidError:
-                print(f"🚨 Група {group} не знайдена або недоступна")
             except Exception as e:
                 print(f"🚨 Помилка: {str(e)}")
 
@@ -69,11 +66,10 @@ async def send_messages():
         await client.disconnect()
 
 async def main():
-    max_iterations = 5  # Максимальна кількість ітерацій
-    for i in range(max_iterations):
+    while True:
         await send_messages()
-        print(f"⏳ Наступна розсилка через 1 годину... (Ітерація {i + 1}/{max_iterations})")
-        await asyncio.sleep(3600)
+        print("⏳ Наступна розсилка через 1 годину...")
+        await asyncio.sleep(3602)
 
 if __name__ == '__main__':
     print("🚀 Запуск розсильника...")
