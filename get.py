@@ -1,8 +1,8 @@
 from telethon.sync import TelegramClient
 
-api_id = 20599035
-api_hash = '46964f4cd05ae0609707b0eca16c4c7f'
-phone_number = '+380996645372'
+api_id = 20324969
+api_hash = '4fbc4584fab68524bd119766b201d6e6'
+phone_number = '+380668721279'
 
 client = TelegramClient('session_name', api_id, api_hash)
 client.connect()
