@@ -12,7 +12,7 @@ PHONE_NUMBER = os.environ['PHONE_NUMBER']
 GROUPS = ['@Crypto_Affiliate_eng', '@fortraffic', '@LeadsAreUs', '@affmktcity', '@AffiliateHubzone', '@delta_fx_crypto_board', '@trafficforyou', '@enalltrafficgroupchat', '@looking_for_offers', '@affcommunity', '@AffiliateChat',  ]
 
 # Текст повідомлення
-MESSAGE = """🚀 WHO NEEDS CRYPTO\FX LIVE LEADS? 🚀
+MESSAGE = """🚀 WHO NEEDS CRYPTO\FX LIVE TRAFFIC? 🚀
 
 📌 Top countries I work with:
 
